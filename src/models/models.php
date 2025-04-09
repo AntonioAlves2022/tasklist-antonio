@@ -19,7 +19,7 @@
     }
 
     // Marca uma task como concluida
-    function ToggleTask($id){
+    function toggleTask($id){
         // Seu código aqui
         $tasks = getTasks();
         foreach($tasks as $index => $task){
