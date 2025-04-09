@@ -1,3 +1,8 @@
+<?php
+ ini_set("display_errors", 1);
+ ini_set("display_startup_errors", 1);
+ error_reporting(E_ALL);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +27,36 @@
 
     <!-- Lista de tarefas -->
      <ul class="list-group">
-        <li class="list-group-item d-flex align-items-center">
+        <?php if(empty($tasks)): ?>
+        <li class="list-group-item text-center text-mutted">
+          Nenhuma tarefa adicionada
+        </li>
+        <?php else: ?>
+          <?php foreach($tasks as $task):?>
+            <li class="ist-group-item d-flex align-items-center 
+            <?=$task['completed'] ?'text-decoration-line-through text-mutted':''?>">
+            <form method="POST" class="me-3">
+                  <input type="hidden" name="action" 
+                  value="toggle">
+                  <input type="hidden" 
+                  name="id" 
+                  value="<?= $task['id'] ?>">
+                  <input type="checkbox" 
+                  class="form-check-input" 
+                  onchange="this.form.submit()" 
+                  <?= $task['completed'] ? 'checked' : '' ?>>
+            </form>
+            <span>
+              <?= htmlspecialchars($task['description']) ?>
+            </span>
+            </li>
+          <?php endforeach; ?>
+        <?php endif; ?>
+     </ul>
+    </div>
+</body>
+<!--  
+<li class="list-group-item d-flex align-items-center">
           <form action="" class="me-3">
             <input type="hidden" name="action" value="toggle"/>
             <input type="hidden" name="id" value="id_do_item"/>
@@ -39,7 +73,5 @@
           </form>
           <span>Tarefa pendente 0001</span>
         </li>
-     </ul>
-    </div>
-</body>
+-->
 </html>

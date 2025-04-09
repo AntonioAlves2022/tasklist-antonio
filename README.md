@@ -7,10 +7,10 @@
  - `vendor`: Pasta das dependencias, não foi criada neste projeto
 
 ## 3. Requisitos da aplicação:
- - [] O usuário deve ser capaz de inserir uma nova tarefa
- - [] O usuario deve ser capaz de marcar uma tarefa como concluida
- - [] O usuario deve ser capaz de visualizar a lista de tarefas
- - [] Ao fechar o navegador a lista de tarefas deverá ser reinicializada
+ - [ ] O usuário deve ser capaz de inserir uma nova tarefa
+ - [ ] O usuario deve ser capaz de marcar uma tarefa como concluida
+ - [ ] O usuario deve ser capaz de visualizar a lista de tarefas
+ - [ ] Ao fechar o navegador a lista de tarefas deverá ser reinicializada
 
 ## 4. Como executar a aplicaçao ?
  1. Inicie o servidor PHP apache
